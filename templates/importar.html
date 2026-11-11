@@ -4,7 +4,12 @@
     <main>
         <h1>Importação de Vendas</h1>
 
-        <!-- Adicionar formulário e campos de importação-->>
+        <!-- Adicionar formulário e campos de importação-->
+         <form action="/importar" method="post" enctype="multipart/form-data">
+            <input type="file" name="arquivocsv"
+            accept=".csv, .xlsx, .xls">
+            <button type="submit">Importar</button>
+         </form>
     </main>
 </body>
 </html>
