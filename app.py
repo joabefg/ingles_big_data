@@ -4,7 +4,7 @@ from controllers.importar import importar
 app = Flask(__name__)
 
 # Adicionar rota para importar arquivo
-@app.route("/importar", methods=["GET"])
+@app.route("/", methods=["GET"])
 def get_importar():
     return render_template("importar.html")
 
