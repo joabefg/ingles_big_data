@@ -1,8 +1,10 @@
 from flask import request, render_template, render_template_string
 import pandas as pd
+from model.product import salvar_dados
 
 # Adicionar lógica para importar os dados do xlsx
 def importar(arquivo):
+    # df = pd.DataFrame(arquivo) -- ERRADO
     df = pd.read_csv(arquivo)
     # Descreve a estrutura do arquivo
     #print(df.describe())
@@ -35,4 +37,6 @@ def importar(arquivo):
         errors='coerce'
     )
 
-    print(df.head(10))
+    df_sql = df[['product_name','product_price','product_category','product_ratings','description','date']]
+
+    salvar_dados(df_sql)
